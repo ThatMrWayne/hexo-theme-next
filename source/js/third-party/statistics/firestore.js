@@ -34,12 +34,12 @@ firebase.initializeApp({
       const title = document.querySelector('.post-title').textContent.trim();
       const doc = articles.doc(title);
       let increaseCount = CONFIG.hostname === location.hostname;
-      if (localStorage.getItem(title)) {
-        increaseCount = false;
-      } else {
+      // if (localStorage.getItem(title)) {
+      //   increaseCount = false;
+      // } else {
         // Mark as visited
-        localStorage.setItem(title, true);
-      }
+      //  localStorage.setItem(title, true);
+      // }
       getCount(doc, increaseCount).then(count => {
         document.querySelector('.firestore-visitors-count').innerText = count;
       });
